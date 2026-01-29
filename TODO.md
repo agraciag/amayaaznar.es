@@ -18,13 +18,14 @@
 - **Commit:** 1ccead8
 
 ### 3. **Navegación Modal en Galerías** ✅ RESUELTO
-- [x] Investigado código de FancyBox
-- [x] Detectado problema: enlaces sin clase `fancybox` ni `rel="gallery"`
-- [x] Añadido selector para galerías de WordPress Gutenberg (`.wp-block-image`)
-- [x] JavaScript añade dinámicamente `rel="gallery"` a todos los enlaces
-- [x] Habilitada navegación cíclica (última → primera imagen)
-- **Solución:** Modificado `et-ptemplates-frontend.js` para agrupar imágenes
-- **Commits:** a4c9ed9, 30720eb
+- [x] Investigado código de FancyBox - incompatible con jQuery 3.x
+- [x] Detectado problema: FancyBox 1.3.4 usa APIs deprecadas (jQuery.browser, .live())
+- [x] Solución: Reemplazado FancyBox con Lightbox2 (librería moderna)
+- [x] Actualizado todos los HTML con `data-lightbox="gallery"`
+- [x] Añadidos archivos Lightbox2: JS, CSS, imágenes (prev, next, close, loading)
+- [x] Navegación con flechas prev/next funcionando correctamente
+- [x] También corregido problema de contenido mixto (HTTP→HTTPS)
+- **Commits:** a4c9ed9, 30720eb, b05d21b, e04e084
 
 ### 4. **Iconos del menú superior (Twitter, RSS, Facebook)** ✅ RESUELTO
 - [x] Iconos descargados y funcionando
@@ -83,16 +84,17 @@
 
 ### DNS Configuración (Cloudflare)
 - [x] Eliminar registros de Cloudflare Tunnel
-- [ ] Añadir 4 registros A de GitHub Pages (DNS only - nube gris)
-- [ ] Añadir CNAME www → agraciag.github.io (DNS only - nube gris)
-- [ ] Verificar propagación DNS (24-48h)
-- [ ] Activar SSL en GitHub Pages (automático tras DNS)
+- [x] Añadir 4 registros A de GitHub Pages (DNS only - nube gris)
+- [x] Añadir CNAME www → agraciag.github.io (DNS only - nube gris)
+- [x] Verificar propagación DNS
+- [x] SSL/HTTPS activado automáticamente en GitHub Pages
 
 ### GitHub Repository
 - [x] Repositorio creado: https://github.com/agraciag/amayaaznar.es
 - [x] GitHub Pages activado
 - [x] CNAME configurado
-- [ ] Verificar que el sitio es accesible en https://amayaaznar.es
+- [x] Sitio accesible en https://amayaaznar.es
+- [x] Corregido contenido mixto (Google Fonts HTTP→HTTPS)
 
 ---
 
@@ -101,9 +103,10 @@
 - **Email actual:** amayaaznar@gmail.com
 - **Dominio:** amayaaznar.es (DNS en Cloudflare)
 - **Hosting:** GitHub Pages (gratis)
-- **Tamaño:** 129MB / 1GB disponible (87% libre)
-- **Tecnología:** HTML estático + CSS + JavaScript (FancyBox)
+- **Tamaño:** ~130MB / 1GB disponible (87% libre)
+- **Tecnología:** HTML estático + CSS + JavaScript (jQuery 3.7.1 + Lightbox2)
 - **Tema original:** Modest (WordPress)
+- **HTTPS:** ✅ Activo con certificado válido
 
 ---
 
