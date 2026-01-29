@@ -17,12 +17,14 @@
 - **Solución:** Añadido prefijo `../` a todas las rutas en srcset
 - **Commit:** 1ccead8
 
-### 3. **Navegación Modal en Galerías** ⚠️ PENDIENTE
-- [ ] Lightbox/modal funcional pero sin navegación entre fotos
-- [ ] Verificar si falta JavaScript de FancyBox
-- [ ] Revisar configuración de FancyBox para navegación anterior/siguiente
-- **JavaScript:** `wp-content/themes/Modest/epanel/page_templates/js/fancybox/`
-- **Nota:** Requiere investigación adicional del código FancyBox
+### 3. **Navegación Modal en Galerías** ✅ RESUELTO
+- [x] Investigado código de FancyBox
+- [x] Detectado problema: enlaces sin clase `fancybox` ni `rel="gallery"`
+- [x] Añadido selector para galerías de WordPress Gutenberg (`.wp-block-image`)
+- [x] JavaScript añade dinámicamente `rel="gallery"` a todos los enlaces
+- [x] Habilitada navegación cíclica (última → primera imagen)
+- **Solución:** Modificado `et-ptemplates-frontend.js` para agrupar imágenes
+- **Commits:** a4c9ed9, 30720eb
 
 ### 4. **Iconos del menú superior (Twitter, RSS, Facebook)** ✅ RESUELTO
 - [x] Iconos descargados y funcionando
@@ -37,9 +39,12 @@
 ### 5. **Página de Descargas** ✅ RESUELTO
 - [x] PDFs descargados (64MB)
 - [x] Enlaces corregidos a rutas relativas
-- [x] Layout funcional
+- [x] Layout mejorado con tarjetas individuales
+- [x] Botón "Ver PDF" (abre en nueva pestaña)
+- [x] Botón "Descargar" para descarga directa
+- [x] Descripciones añadidas a cada portfolio
 - **Archivos:** 4 PDFs en `wp-content/uploads/2023/03/`
-- **Commit:** 1ccead8
+- **Commits:** 1ccead8, a4c9ed9
 
 ---
 
