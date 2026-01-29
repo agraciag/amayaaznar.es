@@ -14,16 +14,14 @@ jQuery(document).ready(function() {
 
 	// Inicializar FancyBox para galerías de WordPress (wp-block-image)
 	// Buscar todos los enlaces a imágenes dentro de wp-block-image
-	var $galleryLinks = jQuery(".wp-block-image a[href*='uploads'][href*='.jpg'], .wp-block-image a[href*='uploads'][href*='.jpeg'], .wp-block-image a[href*='uploads'][href*='.png'], .wp-block-image a[href*='uploads'][href*='.gif']");
+	var $galleryLinks = jQuery(".wp-block-gallery .wp-block-image a");
 
 	console.log("FancyBox: Enlaces encontrados = " + $galleryLinks.length);
+	console.log("FancyBox: Primer enlace href = " + ($galleryLinks.length > 0 ? $galleryLinks.first().attr('href') : 'ninguno'));
 
 	if ($galleryLinks.length > 0) {
-		// Añadir clase y rel para agrupar
-		$galleryLinks.addClass('fancybox-gallery').attr('rel', 'gallery-group');
-
-		// Inicializar FancyBox
-		jQuery("a.fancybox-gallery").fancybox({
+		// Inicializar FancyBox con rel="gallery" para agrupar todas las imágenes
+		$galleryLinks.attr('rel', 'gallery').fancybox({
 			'overlayOpacity'	:	0.7,
 			'overlayColor'		:	'#000000',
 			'transitionIn'		: 'elastic',
@@ -33,11 +31,10 @@ jQuery(document).ready(function() {
 			'speedIn' 			: '700',
 			'centerOnScroll'	: true,
 			'titleShow'			: false,
-			'cyclic'			: true,
-			'type'				: 'image'
+			'cyclic'			: true
 		});
 
-		console.log("FancyBox inicializado para galería");
+		console.log("FancyBox inicializado para " + $galleryLinks.length + " imágenes");
 	}
 	
 	jQuery("a[class*='et_video_lightbox']").click(function(){
