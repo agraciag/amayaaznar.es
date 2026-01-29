@@ -1,5 +1,6 @@
 /* <![CDATA[ */
 jQuery(document).ready(function() {
+	// Inicializar FancyBox para enlaces con clase fancybox
 	jQuery("a[class*=fancybox]").fancybox({
 		'overlayOpacity'	:	0.7,
 		'overlayColor'		:	'#000000',
@@ -9,6 +10,19 @@ jQuery(document).ready(function() {
 		'easingOut'     	: 'easeInBack',
 		'speedIn' 			: '700',
 		'centerOnScroll'	: true
+	});
+
+	// Inicializar FancyBox para galerías de WordPress (wp-block-image)
+	jQuery(".wp-block-image a[href$='.jpg'], .wp-block-image a[href$='.jpeg'], .wp-block-image a[href$='.png'], .wp-block-image a[href$='.gif']").fancybox({
+		'overlayOpacity'	:	0.7,
+		'overlayColor'		:	'#000000',
+		'transitionIn'		: 'elastic',
+		'transitionOut'		: 'elastic',
+		'easingIn'      	: 'easeOutBack',
+		'easingOut'     	: 'easeInBack',
+		'speedIn' 			: '700',
+		'centerOnScroll'	: true,
+		'titleShow'			: false
 	});
 	
 	jQuery("a[class*='et_video_lightbox']").click(function(){
