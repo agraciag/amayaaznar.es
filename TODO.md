@@ -2,7 +2,7 @@
 
 ## 🔴 **CRÍTICO - Corregir antes del lanzamiento**
 
-### 1. **Protección Email contra Spam**
+### 1. **Protección Email contra Spam** ⚠️ PENDIENTE
 - [ ] Implementar obfuscación del email en `contacto/index.html`
 - [ ] Opciones:
   - CloudFlare Email Protection
@@ -10,43 +10,36 @@
   - Servicio como Formspree (formulario real sin exponer email)
 - **Archivo:** `contacto/index.html`
 
-### 2. **Galerías - Thumbnails no se visualizan**
-- [ ] Investigar por qué los thumbnails de las galerías no cargan
-- [ ] Verificar rutas de imágenes en páginas de galerías
-- [ ] Posible problema: rutas relativas vs absolutas
-- **Archivos afectados:**
-  - `retratos_/index.html`
-  - `bodas_/index.html`
-  - `ninos_/index.html`
-  - `composiciones_/index.html`
-  - `corporativas_/index.html`
-  - `reportaje_/index.html`
-  - `estructuras_/index.html`
-  - `encuentros/index.html`
+### 2. **Galerías - Thumbnails no se visualizan** ✅ RESUELTO
+- [x] Investigar por qué los thumbnails de las galerías no cargan
+- [x] Verificar rutas de imágenes en páginas de galerías
+- [x] Arreglado: srcset con rutas relativas incorrectas
+- **Solución:** Añadido prefijo `../` a todas las rutas en srcset
+- **Commit:** 1ccead8
 
-### 3. **Navegación Modal en Galerías**
+### 3. **Navegación Modal en Galerías** ⚠️ PENDIENTE
 - [ ] Lightbox/modal funcional pero sin navegación entre fotos
 - [ ] Verificar si falta JavaScript de FancyBox
 - [ ] Revisar configuración de FancyBox para navegación anterior/siguiente
 - **JavaScript:** `wp-content/themes/Modest/epanel/page_templates/js/fancybox/`
+- **Nota:** Requiere investigación adicional del código FancyBox
 
-### 4. **Iconos del menú superior (Twitter, RSS, Facebook)**
-- [ ] Iconos no se visualizan (posible problema de rutas)
-- [ ] Verificar enlaces de iconos (probablemente vacíos o placeholder)
+### 4. **Iconos del menú superior (Twitter, RSS, Facebook)** ✅ RESUELTO
+- [x] Iconos descargados y funcionando
 - [ ] **DECISIÓN PENDIENTE:** ¿Conservar o eliminar iconos?
-  - Si conservar: añadir enlaces reales a redes sociales
-  - Si eliminar: limpiar HTML en todas las páginas
+  - Twitter link: placeholder (`#`)
+  - RSS link: funciona (comments/feed/)
+  - Facebook link: placeholder (`#`)
 - **Ubicación:** Header de todas las páginas
-- **Archivos de iconos:** `wp-content/themes/Modest/images/twitter.png`, `facebook.png`, `rss.png`
+- **Archivos:** `wp-content/themes/Modest/images/*.png`
+- **Commit:** 1ccead8
 
-### 5. **Página de Descargas**
-- [ ] Links amontonados (problema de layout/CSS)
-- [ ] Enlaces llevan a 404s
-- [ ] **Opciones:**
-  - Arreglar enlaces y layout
-  - Eliminar página si no es necesaria
-  - Convertir a página informativa
-- **Archivo:** `descargas/index.html`
+### 5. **Página de Descargas** ✅ RESUELTO
+- [x] PDFs descargados (64MB)
+- [x] Enlaces corregidos a rutas relativas
+- [x] Layout funcional
+- **Archivos:** 4 PDFs en `wp-content/uploads/2023/03/`
+- **Commit:** 1ccead8
 
 ---
 
