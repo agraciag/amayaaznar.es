@@ -2,13 +2,13 @@
 
 ## 🔴 **CRÍTICO - Corregir antes del lanzamiento**
 
-### 1. **Protección Email contra Spam** ⚠️ PENDIENTE
-- [ ] Implementar obfuscación del email en `contacto/index.html`
-- [ ] Opciones:
-  - CloudFlare Email Protection
-  - JavaScript para ofuscar: `amayaaznar[at]gmail[dot]com`
-  - Servicio como Formspree (formulario real sin exponer email)
-- **Archivo:** `contacto/index.html`
+### 1. **Protección Email contra Spam** ✅ RESUELTO
+- [x] Implementado obfuscación JavaScript en `contacto/index.html`
+- [x] Email codificado en reversa (moc.liamg@ranazayama)
+- [x] JavaScript decodifica automáticamente al cargar la página
+- [x] Protección efectiva contra scrapers de bots
+- **Solución:** Email invertido + decodificación JavaScript client-side
+- **Commit:** f40f094
 
 ### 2. **Galerías - Thumbnails no se visualizan** ✅ RESUELTO
 - [x] Investigar por qué los thumbnails de las galerías no cargan
