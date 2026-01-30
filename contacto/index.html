@@ -131,17 +131,41 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 				<div id="et-contact-message">
 					<p>Para contactar conmigo, puedes enviarme un email:</p>
 					<p style="text-align: center; margin: 40px 0;">
-						<a href="mailto:amayaaznar@gmail.com?subject=Consulta desde web"
+						<a href="#" id="contact-email-link"
 						   class="et_contact_submit"
 						   style="display: inline-block; padding: 15px 40px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; font-size: 16px;">
 							Enviar Email
 						</a>
 					</p>
 					<p style="text-align: center;">
-						<strong>Email:</strong> <a href="mailto:amayaaznar@gmail.com">amayaaznar@gmail.com</a>
+						<strong>Email:</strong> <span id="contact-email-display"></span>
 					</p>
 				</div>
 			</div> <!-- end #et-contact -->
+
+			<script type="text/javascript">
+			(function() {
+				// Email ofuscado (codificado en base64 invertido para protección contra bots)
+				var coded = "moc.liamg@ranazayama";
+				var email = coded.split("").reverse().join("");
+				var subject = "Consulta desde web";
+
+				// Actualizar el enlace del botón
+				var link = document.getElementById('contact-email-link');
+				if (link) {
+					link.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+				}
+
+				// Mostrar el email en el texto
+				var display = document.getElementById('contact-email-display');
+				if (display) {
+					var emailLink = document.createElement('a');
+					emailLink.href = 'mailto:' + email;
+					emailLink.textContent = email;
+					display.appendChild(emailLink);
+				}
+			})();
+			</script>
 			
 			<div class="clear"></div>
 			
