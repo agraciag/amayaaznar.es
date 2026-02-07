@@ -317,6 +317,14 @@ amayaaznar.es/
    - **Técnica:** `moc.liamg@ranazayama` → JavaScript → `amayaaznar@gmail.com`
    - **Commit:** f40f094
 
+7. ✅ **GitHub Pages Build Failures** - RESUELTO (2026-02-07)
+   - **Problema:** Los builds de GitHub Pages fallaban con "Page build failed"
+   - **Causa:** Jekyll intentaba procesar el sitio HTML estático
+   - **Síntoma:** El sitio mostraba versión cacheada antigua, modales no funcionaban
+   - **Solución:** Añadir archivo `.nojekyll` en la raíz del repositorio
+   - **Explicación:** `.nojekyll` indica a GitHub Pages que sirva los archivos directamente sin procesarlos con Jekyll
+   - **Commit:** 911c744
+
 ### **Funcionando correctamente:**
 - ✅ Página principal con foto destacada
 - ✅ Navegación del menú
